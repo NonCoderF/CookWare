@@ -14,7 +14,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.sparkstudios.cookware"
+        applicationId = "com.sparkstudios.findmyrecipe"
         minSdk = 24
         targetSdk = 36
         versionCode = 1

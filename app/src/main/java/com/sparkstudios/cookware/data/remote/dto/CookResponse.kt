@@ -4,7 +4,7 @@ data class CookResponse(
     val valid: Boolean? = null,
     val images: List<ImageResult> = emptyList(),
     val ingredients: List<String> = emptyList(),
-    val recipes: RecipeCollectionResult? = null
+    val recipes: List<RecipeResult> = emptyList()
 )
 
 data class ImageResult(
@@ -21,6 +21,8 @@ data class RecipeResult(
     val name: String? = null,
     val description: String? = null,
     val cuisine: String? = null,
+    val imageUrl: String? = null,
+    val imageSourceUrl: String? = null,
     val usedIngredients: List<String> = emptyList(),
     val missingIngredients: List<String> = emptyList(),
     val optionalIngredients: List<String> = emptyList(),
@@ -28,10 +30,4 @@ data class RecipeResult(
     val difficulty: String? = null,
     val servings: Int? = null,
     val steps: List<String> = emptyList()
-)
-
-data class RecipeCollectionResult(
-    val indian: List<RecipeResult> = emptyList(),
-    val chinese: List<RecipeResult> = emptyList(),
-    val assamese: List<RecipeResult> = emptyList()
 )

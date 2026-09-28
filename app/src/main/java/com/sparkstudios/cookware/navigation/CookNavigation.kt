@@ -17,6 +17,16 @@ import com.sparkstudios.cookware.presentation.cook.CookModeScreen
         composable("cuisine") { CuisineScreen(vm) { nav.navigate("recipes") { popUpTo("cuisine") { inclusive = true } } } }
         composable("recipes") { IngredientResultScreen(vm, { id -> vm.setActiveRecipe(id); nav.navigate("detail/$id") }, { nav.popBackStack("camera", false) }) }
         composable("detail/{id}") { entry -> val id = entry.arguments?.getString("id").orEmpty(); vm.recipe(id)?.let { RecipeDetailScreen(it) { nav.navigate("cook/$id") } } }
-        composable("cook/{id}") { entry -> val id = entry.arguments?.getString("id").orEmpty(); vm.recipe(id)?.let { CookModeScreen(it) { nav.popBackStack("detail/$id", false) } } }
+        composable("cook/{id}") { entry ->
+            val id = entry.arguments?.getString("id").orEmpty()
+            vm.recipe(id)?.let {
+                CookModeScreen(it) {
+                    vm.resetSession()
+                    nav.navigate("camera") {
+                        popUpTo("camera") { inclusive = true }
+                    }
+                }
+            }
+        }
     }
 }

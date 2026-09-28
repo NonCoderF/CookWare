@@ -39,18 +39,8 @@ class CookRepositoryImpl @Inject constructor(
             val index = image.index
             if (index != null && image.valid == false) index to (image.reason ?: "Couldn't recognize an ingredient.") else null
         }.toMap()
-        val recipeCollection = response.recipes ?: com.sparkstudios.cookware.data.remote.dto.RecipeCollectionResult()
-        val recipeResults = when (cuisine) {
-            Cuisine.INDIAN -> recipeCollection.indian
-            Cuisine.CHINESE -> recipeCollection.chinese
-            Cuisine.ASSAMESE -> recipeCollection.assamese
-        }
-        val recipes = recipeResults.mapNotNull { recipe ->
-            val id = recipe.id ?: return@mapNotNull null
-            Recipe(id, recipe.name.orEmpty().ifBlank { "Recipe idea" }, recipe.description.orEmpty(), recipe.cuisine ?: cuisine.displayName,
-                recipe.usedIngredients, recipe.missingIngredients, recipe.optionalIngredients, recipe.timeMinutes,
-                recipe.difficulty ?: "Easy", recipe.servings, recipe.steps)
-        }
+        val recipeResults = response.recipes.asSequence().distinctBy { it.id }
+        val recipes = recipeResults.mapNotNull { it.toDomainRecipe(cuisine.displayName) }.toList()
         AnalysisResult(ingredients, invalid, recipes)
     }
 

@@ -5,6 +5,8 @@ data class Recipe(
     val name: String,
     val description: String,
     val cuisine: String,
+    val imageUrl: String?,
+    val imageSourceUrl: String?,
     val usedIngredients: List<String>,
     val missingIngredients: List<String>,
     val optionalIngredients: List<String>,

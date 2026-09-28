@@ -25,6 +25,10 @@ class CameraViewModel @Inject constructor(private val repository: CookRepository
     fun addPhoto(uri: Uri) { if (_state.value.photos.size < 10) _state.value = _state.value.copy(photos = _state.value.photos + IngredientPhoto(System.nanoTime().toString(), uri), uiState = CameraUiState.Idle) }
     fun replacePhoto(id: String, uri: Uri) { _state.value = _state.value.copy(photos = _state.value.photos.map { if (it.id == id) it.copy(uri = uri, invalidReason = null) else it }) }
     fun removePhoto(photo: IngredientPhoto) { _state.value = _state.value.copy(photos = _state.value.photos.filterNot { it.id == photo.id }); runCatching { File(photo.uri.path ?: "").delete() } }
+    fun resetSession() {
+        _state.value.photos.forEach { photo -> runCatching { File(photo.uri.path ?: "").delete() } }
+        _state.value = CameraState()
+    }
     fun selectCuisine(cuisine: Cuisine) { _state.value = _state.value.copy(selectedCuisine = cuisine); Log.d("COOK_CAPTURE", "cuisine=${cuisine.apiValue}") }
     fun newCaptureFile(): File = File.createTempFile("cook_", ".jpg", context.cacheDir)
     fun recipe(id: String): Recipe? = _state.value.recipes.firstOrNull { it.id == id }

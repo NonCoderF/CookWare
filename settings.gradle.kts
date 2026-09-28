@@ -22,5 +22,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "CookWare"
+rootProject.name = "FindMyRecipe"
 include(":app")
