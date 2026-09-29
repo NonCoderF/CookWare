@@ -17,8 +17,9 @@ import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.sparkstudios.cookware.domain.model.Recipe
+import com.sparkstudios.cookware.domain.model.imageItems
 import com.sparkstudios.cookware.presentation.camera.CameraViewModel
-import com.sparkstudios.cookware.presentation.recipe.RecipeImage
+import com.sparkstudios.cookware.presentation.recipe.RecipeImageCarousel
 import com.sparkstudios.cookware.ui.theme.*
 
 @Composable fun IngredientResultScreen(viewModel: CameraViewModel, onRecipe: (String) -> Unit, onAddMore: () -> Unit) {
@@ -75,8 +76,8 @@ private fun RecipeCard(recipe: Recipe, onClick: () -> Unit, modifier: Modifier =
         elevation = CardDefaults.cardElevation(3.dp)
     ) {
         Column {
-            RecipeImage(
-                imageUrl = recipe.imageUrl,
+            RecipeImageCarousel(
+                images = recipe.imageItems(),
                 contentDescription = recipe.name,
                 modifier = Modifier.fillMaxWidth().height(180.dp),
                 shape = RoundedCornerShape(topStart = 22.dp, topEnd = 22.dp),

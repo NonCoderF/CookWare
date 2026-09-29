@@ -23,6 +23,7 @@ data class RecipeResult(
     val cuisine: String? = null,
     val imageUrl: String? = null,
     val imageSourceUrl: String? = null,
+    val images: List<RecipeImageResult> = emptyList(),
     val usedIngredients: List<String> = emptyList(),
     val missingIngredients: List<String> = emptyList(),
     val optionalIngredients: List<String> = emptyList(),
@@ -30,4 +31,9 @@ data class RecipeResult(
     val difficulty: String? = null,
     val servings: Int? = null,
     val steps: List<String> = emptyList()
+)
+
+data class RecipeImageResult(
+    val imageUrl: String? = null,
+    val imageSourceUrl: String? = null
 )

@@ -7,6 +7,7 @@ data class Recipe(
     val cuisine: String,
     val imageUrl: String?,
     val imageSourceUrl: String?,
+    val images: List<RecipeImageRef> = emptyList(),
     val usedIngredients: List<String>,
     val missingIngredients: List<String>,
     val optionalIngredients: List<String>,
@@ -15,3 +16,10 @@ data class Recipe(
     val servings: Int?,
     val steps: List<String>
 )
+
+data class RecipeImageRef(
+    val imageUrl: String?,
+    val imageSourceUrl: String?
+)
+
+fun Recipe.imageItems(): List<RecipeImageRef> = images.ifEmpty { listOf(RecipeImageRef(imageUrl, imageSourceUrl)) }

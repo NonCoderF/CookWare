@@ -30,12 +30,17 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import com.sparkstudios.cookware.domain.model.Recipe
+import com.sparkstudios.cookware.domain.model.imageItems
 import com.sparkstudios.cookware.ui.theme.HerbGreen
 import com.sparkstudios.cookware.ui.theme.Muted
 import com.sparkstudios.cookware.ui.theme.Terracotta
@@ -43,7 +48,9 @@ import com.sparkstudios.cookware.ui.theme.Terracotta
 @Composable
 fun RecipeDetailScreen(recipe: Recipe, onCook: () -> Unit) {
     val context = LocalContext.current
-    val sourceUrl = recipe.imageSourceUrl?.takeIf(::isValidSourceUrl)
+    val imageItems = remember(recipe) { recipe.imageItems() }
+    var selectedImage by remember(imageItems) { mutableStateOf(imageItems.first()) }
+    val sourceUrl = selectedImage.imageSourceUrl?.takeIf(::isValidSourceUrl)
 
     LazyColumn(
         Modifier.fillMaxSize().windowInsetsPadding(WindowInsets.safeDrawing).padding(horizontal = 24.dp),
@@ -51,12 +58,13 @@ fun RecipeDetailScreen(recipe: Recipe, onCook: () -> Unit) {
         contentPadding = PaddingValues(top = 20.dp, bottom = 28.dp)
     ) {
         item {
-            RecipeImage(
-                imageUrl = recipe.imageUrl,
+            RecipeImageCarousel(
+                images = imageItems,
                 contentDescription = recipe.name,
                 modifier = Modifier.fillMaxWidth().height(250.dp),
                 shape = RoundedCornerShape(24.dp),
-                cuisineLabel = recipe.cuisine
+                cuisineLabel = recipe.cuisine,
+                onImageSelected = { selectedImage = it }
             )
         }
         item {

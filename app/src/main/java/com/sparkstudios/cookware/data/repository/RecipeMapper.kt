@@ -2,6 +2,7 @@ package com.sparkstudios.cookware.data.repository
 
 import com.sparkstudios.cookware.data.remote.dto.RecipeResult
 import com.sparkstudios.cookware.domain.model.Recipe
+import com.sparkstudios.cookware.domain.model.RecipeImageRef
 
 fun RecipeResult.toDomainRecipe(fallbackCuisine: String): Recipe? {
     val recipeId = id ?: return null
@@ -12,6 +13,7 @@ fun RecipeResult.toDomainRecipe(fallbackCuisine: String): Recipe? {
         cuisine = cuisine?.takeIf(String::isNotBlank) ?: fallbackCuisine,
         imageUrl = imageUrl,
         imageSourceUrl = imageSourceUrl,
+        images = images.map { RecipeImageRef(it.imageUrl, it.imageSourceUrl) },
         usedIngredients = usedIngredients,
         missingIngredients = missingIngredients,
         optionalIngredients = optionalIngredients,
