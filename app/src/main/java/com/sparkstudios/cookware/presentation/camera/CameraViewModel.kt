@@ -43,6 +43,11 @@ class CameraViewModel @Inject constructor(private val repository: CookRepository
     fun newCaptureFile(): File = File.createTempFile("cook_", ".jpg", context.cacheDir)
     fun recipe(id: String): Recipe? = _state.value.recipes.firstOrNull { it.id == id }
     fun setActiveRecipe(id: String) { _state.value = _state.value.copy(activeRecipeId = id) }
+    fun consumeAnalysisSuccess() {
+        if (_state.value.uiState is CameraUiState.Success) {
+            _state.value = _state.value.copy(uiState = CameraUiState.Idle)
+        }
+    }
     fun clearError() { if (_state.value.uiState is CameraUiState.Error) _state.value = _state.value.copy(uiState = CameraUiState.Idle) }
     fun analyze() {
         val current = _state.value; val cuisine = current.selectedCuisine ?: return

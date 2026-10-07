@@ -15,11 +15,11 @@ import com.sparkstudios.cookware.presentation.cook.CookModeScreen
     val nav = rememberNavController(); val vm: CameraViewModel = hiltViewModel(); val state by vm.state.collectAsStateWithLifecycle()
     NavHost(nav, "camera") {
         composable("camera") { CameraScreen(vm) { vm.resetAnalysisForNewCuisine(); nav.navigate("cuisine") } }
-        composable("cuisine") { CuisineScreen(vm) { nav.navigate("recipes") { popUpTo("cuisine") { inclusive = true } } } }
+        composable("cuisine") { CuisineScreen(vm) { vm.consumeAnalysisSuccess(); nav.navigate("recipes") } }
         composable("recipes") { IngredientResultScreen(vm, { id -> vm.setActiveRecipe(id); nav.navigate("detail/$id") }, { nav.popBackStack("camera", false) }) }
         composable("detail/{id}") {
             val id = it.arguments?.getString("id").orEmpty()
-            BackHandler { nav.popBackStack("camera", false) }
+            BackHandler { nav.popBackStack() }
             vm.recipe(id)?.let { recipe -> RecipeDetailScreen(recipe) { nav.navigate("cook/$id") } }
         }
         composable("cook/{id}") { entry ->

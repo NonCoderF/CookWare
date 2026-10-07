@@ -60,7 +60,7 @@
 </td>
 <td>
 <div class="infoBox duration">
-<div class="counter">17.087s</div>
+<div class="counter">0.981s</div>
 <p>duration</p>
 </div>
 </td>
@@ -80,41 +80,14 @@
 <div class="result-details">
 <h3>Failure details</h3>
 <span class="code">
-<pre id="root-0-test-failure-launchesAndShowsMainCameraScreen()">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: Error executing adbExec. Original error: 'Command ''C:\Users\NIZAMUDDIN\AppData\Local\Android\Sdk\platform-tools\adb.exe' -P 5037 -s 3c523b85 shell input keyevent 26' exited with code 255'; Command output: 
-Exception occurred while executing 'keyevent':
-java.lang.SecurityException: Injecting input events requires the caller (or the source of the instrumentation, if any) to have the INJECT_EVENTS permission.
-	at com.android.server.input.InputManagerService.injectInputEventToTarget(InputManagerService.java:1103)
-	at com.android.server.input.InputManagerService.injectInputEventToTarget(InputManagerService.java:1089)
-	at android.hardware.input.InputManagerGlobal.injectInputEvent(InputManagerGlobal.java:1698)
-	at android.hardware.input.InputManagerGlobal.injectInputEvent(InputManagerGlobal.java:1708)
-	at com.android.server.input.InputShellCommand.injectInputEvent(InputShellCommand.java:158)
-	at com.android.server.input.InputShellCommand.$r8$lambda$hGxb9MovDr1pEN3Qnb51vH9VzpA(InputShellCommand.java:0)
-	at com.android.server.input.InputShellCommand$$ExternalSyntheticLambda0.accept(D8$$SyntheticClass:0)
-	at com.android.server.input.InputShellCommand.injectKeyEvent(InputShellCommand.java:167)
-	at com.android.server.input.InputShellCommand.sendKeyEvent(InputShellCommand.java:491)
-	at com.android.server.input.InputShellCommand.runKeyEvent(InputShellCommand.java:473)
-	at com.android.server.input.InputShellCommand.onCommand(InputShellCommand.java:324)
-	at com.android.modules.utils.BasicShellCommandHandler.exec(BasicShellCommandHandler.java:97)
-	at android.os.ShellCommand.exec(ShellCommand.java:38)
-	at com.android.server.input.InputManagerService.onShellCommand(InputManagerService.java:4151)
-	at android.os.Binder.shellCommand(Binder.java:1158)
-	at android.os.Binder.onTransact(Binder.java:960)
-	at android.hardware.input.IInputManager$Stub.onTransact(IInputManager.java:1576)
-	at android.os.Binder.execTransactInternal(Binder.java:1433)
-	at android.os.Binder.execTransact(Binder.java:1372)
- 
+<pre id="root-0-test-failure-launchesAndShowsMainCameraScreen()">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure. 
 Host info: host: 'NIZAMUDDIN-LAPT', ip: '192.168.1.5'
 Build info: version: '4.35.0', revision: '1c58e5028b'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.11'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.10'
 Driver info: io.appium.java_client.android.AndroidDriver
 Command: [null, newSession {capabilities=[Capabilities {appium:app: C:\Users\NIZAMUDDIN\OneDriv..., appium:appActivity: com.sparkstudios.cookware.M..., appium:appPackage: com.sparkstudios.findmyrecipe, appium:autoGrantPermissions: false, appium:automationName: UiAutomator2, appium:ignoreHiddenApiPolicyError: true, appium:noReset: true, appium:skipDeviceInitialization: true, appium:udid: 3c523b85, platformName: ANDROID}]}]
 Capabilities {appium:app: C:\Users\NIZAMUDDIN\OneDriv..., appium:appActivity: com.sparkstudios.cookware.M..., appium:appPackage: com.sparkstudios.findmyrecipe, appium:autoGrantPermissions: false, appium:automationName: UiAutomator2, appium:ignoreHiddenApiPolicyError: true, appium:noReset: true, appium:skipDeviceInitialization: true, appium:udid: 3c523b85, platformName: ANDROID}
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
-	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:178)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:243)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
 	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:308)
 	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:174)
 	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:98)
@@ -122,9 +95,76 @@ Capabilities {appium:app: C:\Users\NIZAMUDDIN\OneDriv..., appium:appActivity: co
 	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:108)
 	at com.sparkstudios.cookware.appium.DriverFactory.create(DriverFactory.kt:26)
 	at com.sparkstudios.cookware.appium.BaseAppiumTest.startDriver(BaseAppiumTest.kt:12)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at java.base/java.util.ArrayList.forEach(Unknown Source)
+	at java.base/java.util.ArrayList.forEach(Unknown Source)
+Caused by: java.io.UncheckedIOException: java.net.ConnectException
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:500)
+	at io.appium.java_client.internal.filters.AppiumIdempotencyFilter.lambda$apply$0(AppiumIdempotencyFilter.java:35)
+	at io.appium.java_client.internal.filters.AppiumUserAgentFilter.lambda$apply$0(AppiumUserAgentFilter.java:86)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.lambda$executeAsync$2(JdkHttpClient.java:387)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(Unknown Source)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(Unknown Source)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:459)
+	... 9 more
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Unknown Source)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(Unknown Source)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(Unknown Source)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$2(Unknown Source)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(Unknown Source)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(Unknown Source)
+	... 3 more
+Caused by: java.nio.channels.ClosedChannelException
+	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(Unknown Source)
+	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(Unknown Source)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(Unknown Source)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	... 10 more
+Cause 1: java.io.UncheckedIOException: java.net.ConnectException
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:500)
+	at io.appium.java_client.internal.filters.AppiumIdempotencyFilter.lambda$apply$0(AppiumIdempotencyFilter.java:35)
+	at io.appium.java_client.internal.filters.AppiumUserAgentFilter.lambda$apply$0(AppiumUserAgentFilter.java:86)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.lambda$executeAsync$2(JdkHttpClient.java:387)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(Unknown Source)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(Unknown Source)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:459)
+	... 9 more
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Unknown Source)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(Unknown Source)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(Unknown Source)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$2(Unknown Source)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(Unknown Source)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(Unknown Source)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(Unknown Source)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(Unknown Source)
+	... 3 more
+Caused by: java.nio.channels.ClosedChannelException
+	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(Unknown Source)
+	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(Unknown Source)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(Unknown Source)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	... 10 more
+
 </pre>
 <button class="clipboard-copy-btn" aria-label="Copy to clipboard" data-copy-element-id="root-0-test-failure-launchesAndShowsMainCameraScreen()">Copy</button>
 </span>
@@ -141,7 +181,7 @@ Capabilities {appium:app: C:\Users\NIZAMUDDIN\OneDriv..., appium:appActivity: co
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="https://www.gradle.org">Gradle 9.5.0</a> at Oct 1, 2026, 3:52:43 AM</p>
+<a href="https://www.gradle.org">Gradle 9.5.0</a> at Oct 7, 2026, 9:53:36 PM</p>
 </div>
 </div>
 </body>
