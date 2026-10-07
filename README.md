@@ -1,12 +1,12 @@
-# CookWare
+# FindMyRecipe
 
 <div align="center">
 
-<img src="docs/assets/cookware-icon.png" alt="CookWare app icon" width="180" />
+<img src="docs/assets/cookware-icon.png" alt="FindMyRecipe app icon" width="180" />
 
 ### Turn what you have into something delicious.
 
-CookWare is a friendly Android cooking assistant that uses your camera to recognize ingredients and suggest recipes you can actually make.
+FindMyRecipe is a friendly Android cooking assistant that uses your camera to recognize ingredients and suggest recipes you can actually make.
 
 [![Android](https://img.shields.io/badge/Android-API%2026%2B-3DDC84?logo=android&logoColor=white)](https://developer.android.com/)
 [![Kotlin](https://img.shields.io/badge/Kotlin-2.x-7F52FF?logo=kotlin&logoColor=white)](https://kotlinlang.org/)
@@ -17,7 +17,7 @@ CookWare is a friendly Android cooking assistant that uses your camera to recogn
 
 ## The idea
 
-Open the camera, snap the ingredients in your kitchen, choose a cuisine, and let CookWare turn the moment into recipe inspiration. The experience is designed to feel quick, warm, and genuinely useful—even when your fridge is looking random.
+Open the camera, snap the ingredients in your kitchen, choose a cuisine, and let FindMyRecipe turn the moment into recipe inspiration. The experience is designed to feel quick, warm, and genuinely useful—even when your fridge is looking random.
 
 ## What makes it special
 
@@ -31,7 +31,7 @@ Open the camera, snap the ingredients in your kitchen, choose a cuisine, and let
 
 ## Visual direction
 
-CookWare uses a warm kitchen palette: herb green for freshness, cream for comfort, and terracotta for energy. The app icon combines a cooking pot with a camera lens to make the product promise instantly recognizable.
+FindMyRecipe uses a warm kitchen palette: herb green for freshness, cream for comfort, and terracotta for energy. The app icon combines a cooking pot with a camera lens to make the product promise instantly recognizable.
 
 ## Tech stack
 
@@ -75,7 +75,7 @@ app/src/main/java/com/sparkstudios/cookware/
 
 ## Status
 
-CookWare is an actively evolving prototype focused on making ingredient capture and recipe discovery feel effortless.
+FindMyRecipe is an actively evolving prototype focused on making ingredient capture and recipe discovery feel effortless.
 
 <div align="center">
 

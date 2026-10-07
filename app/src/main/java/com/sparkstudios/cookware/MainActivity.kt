@@ -11,7 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.testTagsAsResourceId
 import com.sparkstudios.cookware.navigation.CookNavigation
-import com.sparkstudios.cookware.ui.theme.CookWareTheme
+import com.sparkstudios.cookware.ui.theme.FindMyRecipeTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -23,7 +23,7 @@ class MainActivity : ComponentActivity() {
             navigationBarStyle = SystemBarStyle.light(android.graphics.Color.TRANSPARENT, android.graphics.Color.TRANSPARENT)
         )
         setContent {
-            CookWareTheme {
+            FindMyRecipeTheme {
                 Surface(
                     Modifier
                         .fillMaxSize()
