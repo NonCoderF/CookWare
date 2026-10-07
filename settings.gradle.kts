@@ -24,3 +24,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "FindMyRecipe"
 include(":app")
+include(":appium-tests")

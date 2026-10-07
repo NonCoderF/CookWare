@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.sparkstudios.cookware.appium.SmokeTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2026-09-30T22:22:26.231Z" hostname="NIZAMUDDIN-LAPT" time="17.099">
+  <properties/>
+  <testcase name="launchesAndShowsMainCameraScreen()" classname="com.sparkstudios.cookware.appium.SmokeTest" time="17.087">
+    <failure message="org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: Error executing adbExec. Original error: 'Command ''C:\Users\NIZAMUDDIN\AppData\Local\Android\Sdk\platform-tools\adb.exe' -P 5037 -s 3c523b85 shell input keyevent 26' exited with code 255'; Command output: &#13;&#10;Exception occurred while executing 'keyevent':&#13;&#10;java.lang.SecurityException: Injecting input events requires the caller (or the source of the instrumentation, if any) to have the INJECT_EVENTS permission.&#13;&#10;&#9;at com.android.server.input.InputManagerService.injectInputEventToTarget(InputManagerService.java:1103)&#13;&#10;&#9;at com.android.server.input.InputManagerService.injectInputEventToTarget(InputManagerService.java:1089)&#13;&#10;&#9;at android.hardware.input.InputManagerGlobal.injectInputEvent(InputManagerGlobal.java:1698)&#13;&#10;&#9;at android.hardware.input.InputManagerGlobal.injectInputEvent(InputManagerGlobal.java:1708)&#13;&#10;&#9;at com.android.server.input.InputShellCommand.injectInputEvent(InputShellCommand.java:158)&#13;&#10;&#9;at com.android.server.input.InputShellCommand.$r8$lambda$hGxb9MovDr1pEN3Qnb51vH9VzpA(InputShellCommand.java:0)&#13;&#10;&#9;at com.android.server.input.InputShellCommand$$ExternalSyntheticLambda0.accept(D8$$SyntheticClass:0)&#13;&#10;&#9;at com.android.server.input.InputShellCommand.injectKeyEvent(InputShellCommand.java:167)&#13;&#10;&#9;at com.android.server.input.InputShellCommand.sendKeyEvent(InputShellCommand.java:491)&#13;&#10;&#9;at com.android.server.input.InputShellCommand.runKeyEvent(InputShellCommand.java:473)&#13;&#10;&#9;at com.android.server.input.InputShellCommand.onCommand(InputShellCommand.java:324)&#13;&#10;&#9;at com.android.modules.utils.BasicShellCommandHandler.exec(BasicShellCommandHandler.java:97)&#13;&#10;&#9;at android.os.ShellCommand.exec(ShellCommand.java:38)&#13;&#10;&#9;at com.android.server.input.InputManagerService.onShellCommand(InputManagerService.java:4151)&#13;&#10;&#9;at android.os.Binder.shellCommand(Binder.java:1158)&#13;&#10;&#9;at android.os.Binder.onTransact(Binder.java:960)&#13;&#10;&#9;at android.hardware.input.IInputManager$Stub.onTransact(IInputManager.java:1576)&#13;&#10;&#9;at android.os.Binder.execTransactInternal(Binder.java:1433)&#13;&#10;&#9;at android.os.Binder.execTransact(Binder.java:1372)&#13;&#10; &#10;Host info: host: 'NIZAMUDDIN-LAPT', ip: '192.168.1.5'&#10;Build info: version: '4.35.0', revision: '1c58e5028b'&#10;System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.11'&#10;Driver info: io.appium.java_client.android.AndroidDriver&#10;Command: [null, newSession {capabilities=[Capabilities {appium:app: C:\Users\NIZAMUDDIN\OneDriv..., appium:appActivity: com.sparkstudios.cookware.M..., appium:appPackage: com.sparkstudios.findmyrecipe, appium:autoGrantPermissions: false, appium:automationName: UiAutomator2, appium:ignoreHiddenApiPolicyError: true, appium:noReset: true, appium:skipDeviceInitialization: true, appium:udid: 3c523b85, platformName: ANDROID}]}]&#10;Capabilities {appium:app: C:\Users\NIZAMUDDIN\OneDriv..., appium:appActivity: com.sparkstudios.cookware.M..., appium:appPackage: com.sparkstudios.findmyrecipe, appium:autoGrantPermissions: false, appium:automationName: UiAutomator2, appium:ignoreHiddenApiPolicyError: true, appium:noReset: true, appium:skipDeviceInitialization: true, appium:udid: 3c523b85, platformName: ANDROID}" type="org.openqa.selenium.SessionNotCreatedException">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: Error executing adbExec. Original error: 'Command ''C:\Users\NIZAMUDDIN\AppData\Local\Android\Sdk\platform-tools\adb.exe' -P 5037 -s 3c523b85 shell input keyevent 26' exited with code 255'; Command output: 
+Exception occurred while executing 'keyevent':
+java.lang.SecurityException: Injecting input events requires the caller (or the source of the instrumentation, if any) to have the INJECT_EVENTS permission.
+	at com.android.server.input.InputManagerService.injectInputEventToTarget(InputManagerService.java:1103)
+	at com.android.server.input.InputManagerService.injectInputEventToTarget(InputManagerService.java:1089)
+	at android.hardware.input.InputManagerGlobal.injectInputEvent(InputManagerGlobal.java:1698)
+	at android.hardware.input.InputManagerGlobal.injectInputEvent(InputManagerGlobal.java:1708)
+	at com.android.server.input.InputShellCommand.injectInputEvent(InputShellCommand.java:158)
+	at com.android.server.input.InputShellCommand.$r8$lambda$hGxb9MovDr1pEN3Qnb51vH9VzpA(InputShellCommand.java:0)
+	at com.android.server.input.InputShellCommand$$ExternalSyntheticLambda0.accept(D8$$SyntheticClass:0)
+	at com.android.server.input.InputShellCommand.injectKeyEvent(InputShellCommand.java:167)
+	at com.android.server.input.InputShellCommand.sendKeyEvent(InputShellCommand.java:491)
+	at com.android.server.input.InputShellCommand.runKeyEvent(InputShellCommand.java:473)
+	at com.android.server.input.InputShellCommand.onCommand(InputShellCommand.java:324)
+	at com.android.modules.utils.BasicShellCommandHandler.exec(BasicShellCommandHandler.java:97)
+	at android.os.ShellCommand.exec(ShellCommand.java:38)
+	at com.android.server.input.InputManagerService.onShellCommand(InputManagerService.java:4151)
+	at android.os.Binder.shellCommand(Binder.java:1158)
+	at android.os.Binder.onTransact(Binder.java:960)
+	at android.hardware.input.IInputManager$Stub.onTransact(IInputManager.java:1576)
+	at android.os.Binder.execTransactInternal(Binder.java:1433)
+	at android.os.Binder.execTransact(Binder.java:1372)
+ 
+Host info: host: 'NIZAMUDDIN-LAPT', ip: '192.168.1.5'
+Build info: version: '4.35.0', revision: '1c58e5028b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.11'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [null, newSession {capabilities=[Capabilities {appium:app: C:\Users\NIZAMUDDIN\OneDriv..., appium:appActivity: com.sparkstudios.cookware.M..., appium:appPackage: com.sparkstudios.findmyrecipe, appium:autoGrantPermissions: false, appium:automationName: UiAutomator2, appium:ignoreHiddenApiPolicyError: true, appium:noReset: true, appium:skipDeviceInitialization: true, appium:udid: 3c523b85, platformName: ANDROID}]}]
+Capabilities {appium:app: C:\Users\NIZAMUDDIN\OneDriv..., appium:appActivity: com.sparkstudios.cookware.M..., appium:appPackage: com.sparkstudios.findmyrecipe, appium:autoGrantPermissions: false, appium:automationName: UiAutomator2, appium:ignoreHiddenApiPolicyError: true, appium:noReset: true, appium:skipDeviceInitialization: true, appium:udid: 3c523b85, platformName: ANDROID}
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:178)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:243)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:308)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:174)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:98)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:109)
+	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:108)
+	at com.sparkstudios.cookware.appium.DriverFactory.create(DriverFactory.kt:26)
+	at com.sparkstudios.cookware.appium.BaseAppiumTest.startDriver(BaseAppiumTest.kt:12)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+</failure>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

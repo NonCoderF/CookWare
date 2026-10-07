@@ -39,6 +39,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -76,6 +77,7 @@ fun CuisineScreen(viewModel: CameraViewModel, onSuccess: () -> Unit) {
         Column(
             Modifier
                 .fillMaxSize()
+                .testTag("cuisine_screen")
                 .windowInsetsPadding(WindowInsets.safeDrawing)
                 .padding(horizontal = 20.dp, vertical = 16.dp)
         ) {
@@ -89,7 +91,7 @@ fun CuisineScreen(viewModel: CameraViewModel, onSuccess: () -> Unit) {
             OutlinedTextField(
                 value = query,
                 onValueChange = { query = it },
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier.testTag("cuisine_search").fillMaxWidth(),
                 singleLine = true,
                 placeholder = { Text("Search cuisines", color = Muted) },
                 leadingIcon = { Icon(Icons.Default.Search, contentDescription = null, tint = HerbGreen) },
@@ -114,7 +116,7 @@ fun CuisineScreen(viewModel: CameraViewModel, onSuccess: () -> Unit) {
             Button(
                 onClick = viewModel::analyze,
                 enabled = state.selectedCuisine != null,
-                modifier = Modifier.fillMaxWidth().height(56.dp),
+                modifier = Modifier.testTag("find_recipes").fillMaxWidth().height(56.dp),
                 shape = RoundedCornerShape(18.dp)
             ) { Text("Find My Recipes") }
         }
@@ -125,7 +127,7 @@ fun CuisineScreen(viewModel: CameraViewModel, onSuccess: () -> Unit) {
 private fun CuisineCard(cuisine: Cuisine, selected: Boolean, onClick: () -> Unit, featured: Boolean = false) {
     Card(
         onClick = onClick,
-        modifier = Modifier.fillMaxWidth().heightIn(min = if (featured) 92.dp else 104.dp),
+        modifier = Modifier.testTag("cuisine_card_${cuisine.apiValue}").fillMaxWidth().heightIn(min = if (featured) 92.dp else 104.dp),
         shape = RoundedCornerShape(if (featured) 22.dp else 18.dp),
         border = if (selected) BorderStroke(2.dp, HerbGreen) else null,
         colors = CardDefaults.cardColors(containerColor = if (selected) SelectedCuisineTint else WarmSurface),

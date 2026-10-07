@@ -36,6 +36,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
@@ -53,7 +54,7 @@ fun RecipeDetailScreen(recipe: Recipe, onCook: () -> Unit) {
     val sourceUrl = selectedImage.imageSourceUrl?.takeIf(::isValidSourceUrl)
 
     LazyColumn(
-        Modifier.fillMaxSize().windowInsetsPadding(WindowInsets.safeDrawing).padding(horizontal = 24.dp),
+        Modifier.fillMaxSize().testTag("recipe_detail_screen").windowInsetsPadding(WindowInsets.safeDrawing).padding(horizontal = 24.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp),
         contentPadding = PaddingValues(top = 20.dp, bottom = 28.dp)
     ) {
@@ -103,7 +104,7 @@ fun RecipeDetailScreen(recipe: Recipe, onCook: () -> Unit) {
                 Text(step, style = MaterialTheme.typography.bodyLarge, modifier = Modifier.weight(1f))
             }
         }
-        item { Button(onCook, Modifier.fillMaxWidth().height(56.dp), shape = RoundedCornerShape(18.dp)) { Text("Start Cooking") } }
+        item { Button(onCook, Modifier.testTag("start_cooking").fillMaxWidth().height(56.dp), shape = RoundedCornerShape(18.dp)) { Text("Start Cooking") } }
     }
 }
 

@@ -10,6 +10,7 @@ import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.layout.WindowInsets
@@ -24,7 +25,7 @@ import com.sparkstudios.cookware.ui.theme.*
 
 @Composable fun IngredientResultScreen(viewModel: CameraViewModel, onRecipe: (String) -> Unit, onAddMore: () -> Unit) {
     val state by viewModel.state.collectAsStateWithLifecycle()
-    LazyColumn(Modifier.fillMaxSize().windowInsetsPadding(WindowInsets.safeDrawing), verticalArrangement = Arrangement.spacedBy(16.dp), contentPadding = PaddingValues(top = 20.dp, bottom = 24.dp)) {
+    LazyColumn(Modifier.fillMaxSize().testTag("results_screen").windowInsetsPadding(WindowInsets.safeDrawing), verticalArrangement = Arrangement.spacedBy(16.dp), contentPadding = PaddingValues(top = 20.dp, bottom = 24.dp)) {
         item {
             Column(Modifier.fillMaxWidth().padding(horizontal = 20.dp)) {
                 Spacer(Modifier.height(18.dp))
@@ -54,7 +55,7 @@ import com.sparkstudios.cookware.ui.theme.*
                 modifier = Modifier.padding(horizontal = 20.dp)
             )
         }
-        item { OutlinedButton(onAddMore, Modifier.fillMaxWidth().padding(horizontal = 20.dp).height(52.dp), shape = RoundedCornerShape(18.dp)) { Text("Add More Ingredients") } }
+        item { OutlinedButton(onAddMore, Modifier.testTag("add_more_ingredients").fillMaxWidth().padding(horizontal = 20.dp).height(52.dp), shape = RoundedCornerShape(18.dp)) { Text("Add More Ingredients") } }
     }
 }
 @Composable private fun IngredientPill(name: String) {
@@ -70,7 +71,7 @@ import com.sparkstudios.cookware.ui.theme.*
 private fun RecipeCard(recipe: Recipe, onClick: () -> Unit, modifier: Modifier = Modifier) {
     Card(
         onClick = onClick,
-        modifier = modifier.fillMaxWidth(),
+        modifier = modifier.testTag("recipe_card_${recipe.id}").fillMaxWidth(),
         shape = RoundedCornerShape(22.dp),
         colors = CardDefaults.cardColors(containerColor = WarmSurface),
         elevation = CardDefaults.cardElevation(3.dp)
@@ -93,7 +94,7 @@ private fun RecipeCard(recipe: Recipe, onClick: () -> Unit, modifier: Modifier =
                     Spacer(Modifier.width(6.dp))
                     Text(if (recipe.missingIngredients.isEmpty()) "Everything you need is here" else "+ ${recipe.missingIngredients.size} ingredient needed", color = HerbGreen, style = MaterialTheme.typography.labelLarge)
                 }
-                Button(onClick) { Text("View Recipe") }
+                Button(onClick, modifier = Modifier.testTag("view_recipe_${recipe.id}")) { Text("View Recipe") }
             }
         }
     }

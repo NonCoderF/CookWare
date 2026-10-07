@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - launchesAndShowsMainCameraScreen()</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<div class="breadcrumbs">
+<a class="breadcrumb" href="../index.html">all</a> &gt; 
+<a class="breadcrumb" href="index.html">com.sparkstudios.cookware.appium.SmokeTest</a> &gt; 
+<span class="breadcrumb">launchesAndShowsMainCameraScreen()</span>
+</div>
+<div class="tab-container">
+<ul class="tabLinks">
+<li>
+<a class="failureGroup" href="#">Gradle Test Run :appium-tests:test</a>
+</li>
+</ul>
+<div class="tab">
+<h2>Gradle Test Run :appium-tests:test</h2>
+<h1>launchesAndShowsMainCameraScreen()</h1>
+<div class="tab-container">
+<ul class="tabLinks">
+<li>
+<a class="" href="#">summary</a>
+</li>
+</ul>
+<div class="tab">
+<h2>summary</h2>
+<div>
+<div class="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox">
+<div class="counter">1</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox">
+<div class="counter">0</div>
+<p>skipped</p>
+</div>
+</td>
+<td>
+<div class="infoBox duration">
+<div class="counter">17.087s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox failures successRate">
+<div class="percent">0%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="result-details">
+<h3>Failure details</h3>
+<span class="code">
+<pre id="root-0-test-failure-launchesAndShowsMainCameraScreen()">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: Error executing adbExec. Original error: 'Command ''C:\Users\NIZAMUDDIN\AppData\Local\Android\Sdk\platform-tools\adb.exe' -P 5037 -s 3c523b85 shell input keyevent 26' exited with code 255'; Command output: 
+Exception occurred while executing 'keyevent':
+java.lang.SecurityException: Injecting input events requires the caller (or the source of the instrumentation, if any) to have the INJECT_EVENTS permission.
+	at com.android.server.input.InputManagerService.injectInputEventToTarget(InputManagerService.java:1103)
+	at com.android.server.input.InputManagerService.injectInputEventToTarget(InputManagerService.java:1089)
+	at android.hardware.input.InputManagerGlobal.injectInputEvent(InputManagerGlobal.java:1698)
+	at android.hardware.input.InputManagerGlobal.injectInputEvent(InputManagerGlobal.java:1708)
+	at com.android.server.input.InputShellCommand.injectInputEvent(InputShellCommand.java:158)
+	at com.android.server.input.InputShellCommand.$r8$lambda$hGxb9MovDr1pEN3Qnb51vH9VzpA(InputShellCommand.java:0)
+	at com.android.server.input.InputShellCommand$$ExternalSyntheticLambda0.accept(D8$$SyntheticClass:0)
+	at com.android.server.input.InputShellCommand.injectKeyEvent(InputShellCommand.java:167)
+	at com.android.server.input.InputShellCommand.sendKeyEvent(InputShellCommand.java:491)
+	at com.android.server.input.InputShellCommand.runKeyEvent(InputShellCommand.java:473)
+	at com.android.server.input.InputShellCommand.onCommand(InputShellCommand.java:324)
+	at com.android.modules.utils.BasicShellCommandHandler.exec(BasicShellCommandHandler.java:97)
+	at android.os.ShellCommand.exec(ShellCommand.java:38)
+	at com.android.server.input.InputManagerService.onShellCommand(InputManagerService.java:4151)
+	at android.os.Binder.shellCommand(Binder.java:1158)
+	at android.os.Binder.onTransact(Binder.java:960)
+	at android.hardware.input.IInputManager$Stub.onTransact(IInputManager.java:1576)
+	at android.os.Binder.execTransactInternal(Binder.java:1433)
+	at android.os.Binder.execTransact(Binder.java:1372)
+ 
+Host info: host: 'NIZAMUDDIN-LAPT', ip: '192.168.1.5'
+Build info: version: '4.35.0', revision: '1c58e5028b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.11'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [null, newSession {capabilities=[Capabilities {appium:app: C:\Users\NIZAMUDDIN\OneDriv..., appium:appActivity: com.sparkstudios.cookware.M..., appium:appPackage: com.sparkstudios.findmyrecipe, appium:autoGrantPermissions: false, appium:automationName: UiAutomator2, appium:ignoreHiddenApiPolicyError: true, appium:noReset: true, appium:skipDeviceInitialization: true, appium:udid: 3c523b85, platformName: ANDROID}]}]
+Capabilities {appium:app: C:\Users\NIZAMUDDIN\OneDriv..., appium:appActivity: com.sparkstudios.cookware.M..., appium:appPackage: com.sparkstudios.findmyrecipe, appium:autoGrantPermissions: false, appium:automationName: UiAutomator2, appium:ignoreHiddenApiPolicyError: true, appium:noReset: true, appium:skipDeviceInitialization: true, appium:udid: 3c523b85, platformName: ANDROID}
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:178)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:243)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:308)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:174)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:98)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:109)
+	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:108)
+	at com.sparkstudios.cookware.appium.DriverFactory.create(DriverFactory.kt:26)
+	at com.sparkstudios.cookware.appium.BaseAppiumTest.startDriver(BaseAppiumTest.kt:12)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+</pre>
+<button class="clipboard-copy-btn" aria-label="Copy to clipboard" data-copy-element-id="root-0-test-failure-launchesAndShowsMainCameraScreen()">Copy</button>
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="https://www.gradle.org">Gradle 9.5.0</a> at Oct 1, 2026, 3:52:43 AM</p>
+</div>
+</div>
+</body>
+</html>

@@ -7,8 +7,14 @@ import org.junit.Test
 
 class CuisineMappingTest {
     @Test fun exposesAllSupportedCuisinesWithUniqueApiValues() {
-        assertEquals(15, Cuisine.entries.size)
-        assertEquals(15, Cuisine.entries.map { it.apiValue }.toSet().size)
+        assertEquals(
+            setOf(
+                "any", "indian", "assamese", "chinese", "japanese", "korean", "thai",
+                "italian", "mexican", "russian", "french", "mediterranean", "middle_eastern",
+                "vietnamese", "american"
+            ),
+            Cuisine.entries.map { it.apiValue }.toSet()
+        )
         assertEquals("any", Cuisine.ANY.apiValue)
         assertEquals("japanese", Cuisine.JAPANESE.apiValue)
         assertEquals("russian", Cuisine.RUSSIAN.apiValue)
